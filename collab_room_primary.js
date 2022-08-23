@@ -1,7 +1,17 @@
 import xapi from 'xapi';
 import { GMM } from './GMM_Lib'
 
-const webex_callout = new GMM.Connect.Webex('myToken', deviceId_1, deviceId_2, ...);
+const config = {
+  deviceToken: 'Your Access Token',
+  devices: [
+    'Webex Device ID 1',
+    'Webex Device ID 2',
+    'Webex Device ID 3',
+    'Webex Device ID 4',
+  ]
+};
+
+const webex_callout = new GMM.Connect.Webex(config.deviceToken, config.devices);
 
 xapi.Event.CallSuccessful.on(callSuccess);
 xapi.Event.CallDisconnect.on(callDisconnect);
