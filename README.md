@@ -10,11 +10,31 @@ https://github.com/CiscoDevNet/roomdevices-macros-samples/tree/master/Global%20M
 
 ## Requirements
 
-1. Two or more Webex Device registered to Webex Cloud services
+1. Two or more Webex Device registered to Webex Cloud services in shared mode ( personal mode devices not support )
 2. Web admin access to the device to uplaod the macro.
 3. Bot access token which as Read/Write API access to all devices
 
-## Setup
+## Bot Setup
+
+Creating a Bot:
+1. Go to https://developer.webex.com/my-apps/new
+2. Click on create a bot
+3. Enter a bot name, username, select an icon and enter a description
+4. Click Add Bot
+5. On the next page, make a copy of the bot access token and store it securely, you will need this for the macro configuration
+
+Give the Bot Access to the Webex Devices:
+1. Log into https://admin.webex.com/
+2. Go to the Workspaces tab
+3. Click on the Workspaces for which this solution will be used
+4. Under each workspaces devices section, click the 'Edit API access'
+5. Click Add user or bot
+6. Search for the name of the bot you just created
+7. Select Full Access under the access level drop down
+8. The bot will now have full read/write access to the device in that workspaces, repeat for any other devices.
+
+
+## Macro Setup
 
 Primary device:
 1. Download the ``collab_room_primary.js`` and ``GMM_Lib.js``  file and upload it to the primary Webex Room.
