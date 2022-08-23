@@ -39,6 +39,8 @@ Give the Bot Access to the Webex Devices:
 Primary device:
 1. Download the ``collab_room_primary.js`` and ``GMM_Lib.js``  file and upload it to the primary Webex Room.
 2. Configure ``collab_room_primary.js`` by entering the Bot Access Token and Devices Ids for all secondary devices
+- The Webex Device Id can be found under the Developer API tab of the web interface on any Cloud registered Webex Device.
+- It can also be found on the Control Hub or on the Device under Status -> Webex -> DeveloperId
 3. Enable ``collab_room_primary.js`` in the macro editor.
 
 Secondary device:
