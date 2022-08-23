@@ -24,7 +24,9 @@ or implied.
  * the call status of a primary Webex Device in a room and automatically adds 
  * the secondary devices to the same meeting.
  * 
- * This is the Primary Macro which controls the secondary devices.
+ * This is the Primary Macro which controls the secondary devices. Further details
+ * are listed in the readme here:
+ * https://github.com/wxsd-sales/collab-room-macro
  * 
  * This macro uses the Global Macro Messaging library which can be downloaded here:
  * https://github.com/CiscoDevNet/roomdevices-macros-samples/tree/master/Global%20Macro%20Messaging
