@@ -36,6 +36,20 @@ or implied.
 import xapi from 'xapi';
 import { GMM } from './GMM_Lib'
 
+
+// Apply default configuration
+xapi.Config.Peripherals.Profile.TouchPanels.set(0)
+  .catch(e=>console.log('Touch Panels Profile not available to set'))
+xapi.Config.UserInterface.MuteWarning.set("Disabled")
+  .catch(e=>console.log('Mute Warning not available to set'));
+xapi.Config.Audio.Input.Microphone[1].Mode.set('Off')
+  .catch(e=>console.log('Microphone 1 cannot be disabled'));
+xapi.Config.Audio.Ultrasound.MaxVolume.set(0);
+xapi.Config.Audio.DefaultVolume.set(0);
+
+// Subscibe to call evnets
+xapi.Event.CallSuccessful.on(processCallAnswered);
+
 GMM.Event.Receiver.on(event => {
   switch (event.Type) {
     case 'Status':
@@ -56,7 +70,6 @@ GMM.Event.Receiver.on(event => {
   }
 })
 
-
 function processDial(event) {
   console.log('Calling: ' + event.dial);
   xapi.Command.Dial({
@@ -67,4 +80,9 @@ function processDial(event) {
 function processDisconnect(event) {
   console.log('Disconnecting: ' + event.disconnect);
   xapi.Command.Call.Disconnect();
+}
+
+function processCallAnswered() {
+  console.log('Call answered, muting microphones');
+  xapi.Command.Audio.Microphones.Mute();
 }
