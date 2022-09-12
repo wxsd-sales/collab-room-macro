@@ -1,18 +1,34 @@
 # Collab Room Macro
 This is a Webex Device Macro which controls other Webex Devices. It monitors the call status of a primary Webex Device in a room and automatically adds the secondary devices to the same meeting.
 
-This macro uses the Globla Macro Messaging library for its communication:
+This macro uses the Globla Macro Messaging (GMM) library for its communication:
 
-https://github.com/CiscoDevNet/roomdevices-macros-samples/tree/master/Global%20Macro%20Messaging
+There are two ways this macro can be deployed:
+
+### Local Admin and IP address:
+
+![image](https://user-images.githubusercontent.com/21026209/189647192-f6887d44-bbac-45fe-b92a-305f85b9d6b6.png)
 
 
-![Cloud xAPI - Frame 8](https://user-images.githubusercontent.com/21026209/186166235-3c064cfb-4194-4de8-9e85-05d1a4a79166.jpg)
+### Cloud xAPI and Bot token:
+
+![image](https://user-images.githubusercontent.com/21026209/189647225-d3c73f4b-6844-4c6c-a394-e7385cbb28c1.png)
+
 
 ## Requirements
+
+#### Local Admin and IP address:
+
+1. Two or more Webex Devices
+2. Web admin access to the device to uplaod the macro.
+3. Local Admin accounts and static IP addresses for all secondary devices
+
+### Cloud xAPI and Bot token:
 
 1. Two or more Webex Device registered to Webex Cloud services in shared mode ( personal mode devices not support )
 2. Web admin access to the device to uplaod the macro.
 3. Bot access token which as Read/Write API access to all devices
+
 
 ## Bot Setup
 
@@ -36,13 +52,23 @@ Give the Bot Access to the Webex Devices:
 
 ## Macro Setup
 
+#### Local Admin and IP address:
+
 Primary device:
-1. Download the ``collab_room_primary.js`` and ``GMM_Lib.js``  file and upload it to the primary Webex Room.
-2. Configure ``collab_room_primary.js`` by entering the Bot Access Token and Devices Ids for all secondary devices
+1. Download the ``collab_room_primary_local.js`` and ``GMM_Lib.js``  file and upload it to the primary Webex Room.
+2. Configure ``collab_room_primary_local.js`` by entering the common local admin username and password for all the secondary devices, along with their IP addresses.
+3. Enable ``collab_room_primary_local.js`` in the macro editor.
+
+#### Cloud xAPI and Bot token:
+
+Primary device:
+1. Download the ``collab_room_primary_cloud.js`` and ``GMM_Lib.js``  file and upload it to the primary Webex Room.
+2. Configure ``collab_room_primary_cloud.js`` by entering the Bot Access Token and Devices Ids for all secondary devices
 - The Webex Device Id can be found under the Developer API tab of the web interface on any Cloud registered Webex Device.
 - It can also be found on the Control Hub or on the Device under Status -> Webex -> DeveloperId
-3. Enable ``collab_room_primary.js`` in the macro editor.
+3. Enable ``collab_room_primary_cloud.js`` in the macro editor.
 
+#### The Secondary Device Macro is common to both local and cloud deployments.
 Secondary device:
 1. Download the ``collab_room_secondary.js`` and ``GMM_Lib.js``  file and upload it to the primary Webex Room.
 2. Enable ``collab_room_secondary.js`` in the macro editor.
