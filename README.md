@@ -15,22 +15,24 @@ There are two ways this macro can be deployed:
 ![image](https://user-images.githubusercontent.com/21026209/189647225-d3c73f4b-6844-4c6c-a394-e7385cbb28c1.png)
 
 
-## Requirements
+
+## Setup
+
+### Prerequisites & Dependencies: 
 
 #### Local Admin and IP address:
 
-1. Two or more Webex Devices
-2. Web admin access to the device to upload the macro.
-3. Local Admin accounts and static IP addresses for all secondary devices
+- Two or more Webex Devices
+- Web admin access to the device to upload the macro.
+- Local Admin accounts and static IP addresses for all secondary devices
 
-### Cloud xAPI and Bot token:
+#### Cloud xAPI and Bot token:
 
-1. Two or more Webex Device registered to Webex Cloud services in shared mode ( personal mode devices not support )
-2. Web admin access to the device to upload the macro.
-3. Bot access token which as Read/Write API access to all devices
+- Two or more Webex Device registered to Webex Cloud services in shared mode ( personal mode devices not support )
+- Web admin access to the device to upload the macro.
+- Bot access token which as Read/Write API access to all devices
 
-
-## Bot Setup
+### Bot Setup
 
 Creating a Bot:
 1. Go to https://developer.webex.com/my-apps/new
@@ -50,7 +52,7 @@ Give the Bot Access to the Webex Devices:
 8. The bot will now have full read/write access to the device in that workspaces, repeat for any other devices.
 
 
-## Macro Setup
+### Macro Setup
 
 #### Local Admin and IP address:
 
