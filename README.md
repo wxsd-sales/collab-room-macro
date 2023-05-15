@@ -1,7 +1,7 @@
 # Collab Room Macro
 This is a Webex Device Macro which controls other Webex Devices. It monitors the call status of a primary Webex Device in a room and automatically adds the secondary devices to the same meeting.
 
-This macro uses the Globla Macro Messaging (GMM) library for its communication:
+This macro uses the Global Macro Messaging (GMM) library for its communication:
 
 There are two ways this macro can be deployed:
 
@@ -20,13 +20,13 @@ There are two ways this macro can be deployed:
 #### Local Admin and IP address:
 
 1. Two or more Webex Devices
-2. Web admin access to the device to uplaod the macro.
+2. Web admin access to the device to upload the macro.
 3. Local Admin accounts and static IP addresses for all secondary devices
 
 ### Cloud xAPI and Bot token:
 
 1. Two or more Webex Device registered to Webex Cloud services in shared mode ( personal mode devices not support )
-2. Web admin access to the device to uplaod the macro.
+2. Web admin access to the device to upload the macro.
 3. Bot access token which as Read/Write API access to all devices
 
 
@@ -73,6 +73,21 @@ Secondary device:
 1. Download the ``collab_room_secondary.js`` and ``GMM_Lib.js``  file and upload it to the primary Webex Room.
 2. Enable ``collab_room_secondary.js`` in the macro editor.
 
-## Support
 
-Please reach out to the WXSD team at [wxsd@external.cisco.com](mailto:wxsd@external.cisco.com?subject=collab-room-macro).
+## Demo
+
+*For more demos & PoCs like this, check out our [Webex Labs site](https://collabtoolbox.cisco.com/webex-labs).
+
+
+## License
+
+All contents are licensed under the MIT license. Please see [license](LICENSE) for details.
+
+
+## Disclaimer
+
+Everything included is for demo and Proof of Concept purposes only. Use of the site is solely at your own risk. This site may contain links to third party content, which we do not warrant, endorse, or assume liability for. These demos are for Cisco Webex use cases, but are not Official Cisco Webex Branded demos.
+
+
+## Questions
+Please contact the WXSD team at [wxsd@external.cisco.com](mailto:wxsd@external.cisco.com?subject=collab-room-macro) for questions. Or, if you're a Cisco internal employee, reach out to us on the Webex App via our bot (globalexpert@webex.bot). In the "Engagement Type" field, choose the "API/SDK Proof of Concept Integration Development" option to make sure you reach our team. 
